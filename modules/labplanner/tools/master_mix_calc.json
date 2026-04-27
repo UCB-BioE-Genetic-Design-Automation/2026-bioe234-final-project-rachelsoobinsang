@@ -1,0 +1,25 @@
+{
+    "id": "org.bioe234.function.labplanner.master_mix_calc.v1",
+    "name": "Master Mix Calculator",
+    "description": "Calculates reagent volumes for lab protocols, including a 10% dead volume buffer for pipetting loss.",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "protocol_name",
+        "type": "string",
+        "description": "The name of the protocol from recipes.json"
+      },
+      {
+        "name": "num_samples",
+        "type": "integer",
+        "description": "The number of reactions to prepare."
+      }
+    ],
+    "execution_details": {
+      "language": "Python",
+      "source": "modules/labplanner/tools/master_mix_calc.py",
+      "initialization": "initiate",
+      "execution": "run",
+      "mcp_name": "calculate_master_mix"
+    }
+  }

@@ -1,0 +1,6 @@
+{
+    "project": "ifg-1 Worm Genotyping #1",
+    "steps": [
+        { "protocol": "General_PCR", "samples": 16 }
+    ]
+}

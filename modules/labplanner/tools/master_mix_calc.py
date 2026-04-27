@@ -90,3 +90,20 @@ class MasterMixCalc:
 _instance = MasterMixCalc()
 _instance.initiate()
 calculate_master_mix = _instance.run
+
+
+if __name__ == "__main__":
+    print("--- Starting Local LabPlanner Test ---")
+    try:
+        # Run the Construction File
+        print("\nTesting 'run' with construction file 'ifg1_germline.json'...")
+        cf_results = _instance.run("ifg1_germline.json")
+        
+        # Pretty-print the actual return object (The LabPacket)
+        import json
+        print("\n--- ACTUAL CF RETURN (LABPACKET) ---")
+        print(json.dumps(cf_results, indent=4))
+
+    except Exception as e:
+        print(f"\nTEST FAILED: {e}")
+

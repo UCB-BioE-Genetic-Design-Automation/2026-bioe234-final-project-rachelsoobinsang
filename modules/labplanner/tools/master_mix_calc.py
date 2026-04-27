@@ -46,7 +46,7 @@ class MasterMixCalc:
         multiplier = num_samples * 1.1
 
         scaled_recipe = {
-            reagent: volume * multiplier
+            reagent: round(volume * multiplier, 2)
             for reagent, volume in base_recipe.items()
         }
 

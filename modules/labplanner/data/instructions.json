@@ -1,0 +1,11 @@
+{
+    "General_PCR": 
+        "Aliquot 3 uL of each lysed sample per desired loci. In another tube, combine {Taq 2X Master Mix} uL of Taq 2X Mix, {Primer Pair} uL of primer mix, and {Autoclaved Water} uL of autoclaved water. Aliquot 22uL each of PCR mix into {Samples} tubes per loci."
+    ,
+    "Tissue_Specific_PCR": 
+        "Aliquot 3 uL of each lysed sample per desired loci. In another tube, combine {Taq 2X Master Mix} uL of Taq 2X Mix, {Primer Pair} uL of primer mix, and {Autoclaved Water} uL of autoclaved water. Aliquot 22uL each of PCR mix into {Samples} tubes per loci."
+    ,
+    "SNP_PCR": 
+        "Aliquot 3 uL of each lysed sample per desired loci. In another tube, combine {Taq 2X Master Mix} uL of Taq 2X Mix, {Primer Pair} uL of primer mix, and {Autoclaved Water} uL of autoclaved water. Aliquot 22uL each of PCR mix into {Samples} tubes per loci."
+    
+}

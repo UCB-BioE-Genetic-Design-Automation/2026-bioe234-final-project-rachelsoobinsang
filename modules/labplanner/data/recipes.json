@@ -1,0 +1,17 @@
+{
+    "General_PCR": {
+        "Taq 2X Master Mix": 12.5,
+        "Primer Pair": 2.5,
+        "Autoclaved Water": 7
+    },
+    "Tissue_Specific_PCR": {
+        "Taq 2X Master Mix": 12.5,
+        "Primer Pair": 3.75,
+        "Autoclaved Water": 5.625
+    },
+    "SNP_PCR": {
+        "Taq 2X Master Mix": 12.5,
+        "Primer Pair": 1,
+        "Autoclaved Water": 8.5
+    }
+}

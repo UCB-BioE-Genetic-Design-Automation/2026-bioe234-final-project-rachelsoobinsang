@@ -1,7 +1,0 @@
-{
-    "project": "ifg-1 x germline validation genotype, 2 loci",
-    "steps": [
-        { "protocol": "Tissue_Specific_PCR", "samples": 16},
-        { "protocol": "General_PCR", "samples": 16}
-    ]
-}

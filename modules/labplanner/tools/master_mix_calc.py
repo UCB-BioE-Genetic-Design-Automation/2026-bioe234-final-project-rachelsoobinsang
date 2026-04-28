@@ -33,7 +33,7 @@ class MasterMixCalc:
             self.instruction_book = {}
             raise FileNotFoundError(f"Could not find instructions.json.")
         
-    def calculate(self, protocol_name:str, num_samples:int) -> dict:
+    def run(self, protocol_name:str, num_samples:int) -> dict:
         lookup_name = protocol_name.replace(" ", "_")
         available = ", ".join(self.recipe_book.keys())
         if lookup_name not in self.recipe_book:
@@ -46,7 +46,7 @@ class MasterMixCalc:
         multiplier = num_samples * 1.1
 
         scaled_recipe = {
-            reagent: round(volume * multiplier, 2)
+            reagent: volume * multiplier
             for reagent, volume in base_recipe.items()
         }
 
@@ -66,44 +66,28 @@ class MasterMixCalc:
             "Units" : "uL",
             "Note": f"This recipe accounts for a 10% buffer for pipetting error."
         }
-
-    def run(self, cf_name: str) -> list:
-            """
-            Processes a Construction File and returns a LabPacket.
-            """
-            base_path = os.path.dirname(os.path.abspath(__file__))
-            cf_path = os.path.join(base_path, "..", "data", "construction_files", cf_name)
-            
-            if not os.path.exists(cf_path):
-                raise FileNotFoundError(f"Construction file not found at {cf_path}")
-                
-            with open(cf_path, 'r') as f:
-                cf_data = json.load(f)
-            
-            lab_packet = []
-            for step in cf_data.get("steps", []):
-                result = self.calculate(step["protocol"], step["samples"])
-                lab_packet.append(result)
-                
-            return lab_packet
     
 _instance = MasterMixCalc()
 _instance.initiate()
 calculate_master_mix = _instance.run
 
-
 if __name__ == "__main__":
-    print("--- Starting Local LabPlanner Test ---")
+    # This block only runs when you execute this file directly
+    print("--- Testing Master Mix Calculator ---")
     try:
-        # Run the Construction File
-        print("\nTesting 'run' with construction file 'ifg1_germline.json'...")
-        cf_results = _instance.run("ifg1_germline.json")
+        # Simulate a request for 10 samples of General PCR
+        test_result = calculate_master_mix("General PCR", 10)
         
-        # Pretty-print the actual return object (The LabPacket)
-        import json
-        print("\n--- ACTUAL CF RETURN (LABPACKET) ---")
-        print(json.dumps(cf_results, indent=4))
-
+        print(f"\nProtocol: {test_result['Protocol']}")
+        print(f"Samples: {test_result['Samples']}")
+        print(f"Units: {test_result['Units']}")
+        print("\n[Scaled Reagents]")
+        for reagent, volume in test_result['Scaled Recipe'].items():
+            print(f"- {reagent}: {volume} uL")
+            
+        print("\n[Bench Instructions]")
+        print(test_result['Instructions'])
+        
     except Exception as e:
-        print(f"\nTEST FAILED: {e}")
+        print(f"Error during test: {e}")
 

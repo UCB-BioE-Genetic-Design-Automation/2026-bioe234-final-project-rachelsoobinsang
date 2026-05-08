@@ -1,0 +1,11 @@
+Test: Miniprep
+Reaction:
+Samples: 
+Label 	 Location 
+finalpdt-TestIDC	TestBox0/B2
+finalpdt-TestIDB	TestBox0/B1
+finalpdt-TestIDA	TestBox0/B0
+finalpdt-TestIDD	TestBox0/B3
+
+Notes: 
+Be gentle when mixing the cells or you will kill them. Never let cells warm up! They should never leave the cold block 

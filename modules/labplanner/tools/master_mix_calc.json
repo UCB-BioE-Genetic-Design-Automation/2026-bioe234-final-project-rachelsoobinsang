@@ -1,35 +1,18 @@
 {
   "id": "org.bioe234.function.labplanner.master_mix_calc.v1",
   "name": "Master Mix Calculator",
-  "description": "Calculates scaled reagent volumes for PCR and lab protocols. Automatically applies a 10% dead volume buffer to account for pipetting loss and rounds results to one decimal place.",
+  "description": "Calculates reagent volumes for lab protocols, including a 10% dead volume buffer for pipetting loss.",
   "type": "function",
   "inputs": [
     {
       "name": "protocol_name",
       "type": "string",
-      "description": "The name of the protocol to use (e.g., 'general_pcr', 'tissue_specific_pcr') as defined in the recipes database."
+      "description": "The name of the protocol from recipes.json"
     },
     {
       "name": "num_samples",
       "type": "integer",
-      "description": "The actual number of experimental reactions planned by the user."
-    }
-  ],
-  "outputs": [
-    {
-      "type": "object",
-      "description": "The complete calculation results including scaled volumes and protocol instructions.",
-      "properties": {
-        "Protocol": { "type": "string" },
-        "Samples": { "type": "integer" },
-        "Scaled Recipe": { 
-          "type": "object", 
-          "description": "A dictionary of reagents and their scaled total volumes." 
-        },
-        "Instructions": { "type": "string" },
-        "Units": { "type": "string" },
-        "Note": { "type": "string" }
-      }
+      "description": "The number of reactions to prepare."
     }
   ],
   "execution_details": {

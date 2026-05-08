@@ -1,11 +1,7 @@
 {
-    "General_PCR": 
-        "Aliquot 3 uL of each lysed sample per desired loci. In another tube, combine {Taq 2X Master Mix} uL of Taq 2X Mix, {Primer Pair} uL of primer mix, and {Autoclaved Water} uL of autoclaved water. Aliquot 22uL of PCR mix per tube for a total of {Samples} tubes."
-    ,
-    "Tissue_Specific_PCR": 
-        "Aliquot 3 uL of each lysed sample per desired loci. In another tube, combine {Taq 2X Master Mix} uL of Taq 2X Mix, {Primer Pair} uL of primer mix, and {Autoclaved Water} uL of autoclaved water. Aliquot 22uL of PCR mix per tube for a total of {Samples} tubes."
-    ,
-    "SNP_PCR": 
-        "Aliquot 3 uL of each lysed sample per desired loci. In another tube, combine {Taq 2X Master Mix} uL of Taq 2X Mix, {Primer Pair} uL of primer mix, and {Autoclaved Water} uL of autoclaved water. Aliquot 22uL of PCR mix per tube for a total of {Samples} tubes."
-    
+    "PCR": "Set up {Samples} PCR reactions using PrimeSTAR protocol PG3K55 on Thermocycler 2A. Per reaction: {ddH2O} uL ddH2O, {PrimeSTAR_dNTP_Mixture_2p5mM} uL dNTPs, {primer1} uL forward primer, {primer2} uL reverse primer, {template} uL template, {PrimeSTAR_GXL_Buffer_5x} uL 5x buffer, {PrimeSTAR_GXL_DNA_Polymerase} uL polymerase. Never let the enzyme warm up.",
+    "Digest": "Set up {Samples} digest reactions on Thermocycler 1A using program main/dig. Per reaction: {ddH2O} uL ddH2O, {NEB_Buffer_2_10x} uL 10x NEB Buffer 2, {dna} uL DNA. Never let enzymes warm up.",
+    "Ligate": "Set up {Samples} ligation reactions on Thermocycler 1A using program main/LIGATE. Per reaction: {ddH2O} uL ddH2O, {T4_DNA_Ligase_Buffer_10x} uL 10x T4 buffer, {dna} uL DNA, {T4_DNA_ligase} uL T4 ligase. Never let enzymes warm up.",
+    "Golden_Gate": "Set up {Samples} Golden Gate reactions. Per reaction: {ddH2O} uL ddH2O, {Gibson_Assembly_Master_Mix} uL master mix. Never let enzymes warm up.",
+    "Gibson": "Set up {Samples} Gibson Assembly reactions. Per reaction: {ddH2O} uL ddH2O, {Gibson_Assembly_Master_Mix} uL Gibson Assembly Master Mix. Never let enzymes warm up."
 }

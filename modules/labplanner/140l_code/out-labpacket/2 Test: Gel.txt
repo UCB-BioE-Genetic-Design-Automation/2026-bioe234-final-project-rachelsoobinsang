@@ -1,0 +1,10 @@
+Test: Gel
+Reaction:
+Sources: 
+Instrument from previous step.	
+Samples: 
+Label 	 Size 	 Product 
+zTestID	1000	pcrpdt
+zTestID	500	pcrOutput
+
+Notes: 

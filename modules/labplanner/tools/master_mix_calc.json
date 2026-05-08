@@ -1,18 +1,87 @@
 {
   "id": "org.bioe234.function.labplanner.master_mix_calc.v1",
   "name": "Master Mix Calculator",
-  "description": "Calculates reagent volumes for lab protocols, including a 10% dead volume buffer for pipetting loss.",
+  "description": "Calculates scaled reagent volumes for a lab master mix given a protocol name and number of samples. Includes a 10% dead volume buffer to account for pipetting loss.",
   "type": "function",
   "inputs": [
     {
       "name": "protocol_name",
       "type": "string",
-      "description": "The name of the protocol from recipes.json"
+      "description": "The name of the protocol. Available options: PCR, Digest, Ligate, Golden_Gate, Gibson."
     },
     {
       "name": "num_samples",
       "type": "integer",
-      "description": "The number of reactions to prepare."
+      "description": "The number of reactions to prepare. Must be at least 1."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Protocol",
+      "type": "string",
+      "description": "The name of the protocol used."
+    },
+    {
+      "name": "Samples",
+      "type": "integer",
+      "description": "The number of samples the recipe was scaled for."
+    },
+    {
+      "name": "Scaled Recipe",
+      "type": "object",
+      "description": "A dictionary of reagent names to scaled volumes in uL, including a 10% buffer."
+    },
+    {
+      "name": "Instructions",
+      "type": "string",
+      "description": "Step-by-step bench instructions for setting up the reactions."
+    },
+    {
+      "name": "Units",
+      "type": "string",
+      "description": "The unit of measurement for all volumes. Always uL."
+    },
+    {
+      "name": "Note",
+      "type": "string",
+      "description": "A note about the 10% pipetting buffer included in the recipe."
+    }
+  ],
+  "examples": [
+    {
+      "input": {"protocol_name": "PCR", "num_samples": 10},
+      "output": {
+        "Protocol": "PCR",
+        "Samples": 10,
+        "Scaled Recipe": {
+          "ddH2O": 352.0,
+          "PrimeSTAR_dNTP_Mixture_2p5mM": 44.0,
+          "primer1": 11.0,
+          "primer2": 11.0,
+          "template": 11.0,
+          "PrimeSTAR_GXL_Buffer_5x": 110.0,
+          "PrimeSTAR_GXL_DNA_Polymerase": 11.0
+        },
+        "Instructions": "Set up 10 PCR reactions using PrimeSTAR protocol PG3K55 on Thermocycler 2A.",
+        "Units": "uL",
+        "Note": "This recipe accounts for a 10% buffer for pipetting error."
+      }
+    },
+    {
+      "input": {"protocol_name": "Ligate", "num_samples": 4},
+      "output": {
+        "Protocol": "Ligate",
+        "Samples": 4,
+        "Scaled Recipe": {
+          "ddH2O": 33.0,
+          "T4_DNA_Ligase_Buffer_10x": 4.4,
+          "dna": 4.4,
+          "T4_DNA_ligase": 2.2
+        },
+        "Instructions": "Set up 4 ligation reactions on Thermocycler 1A using program main/LIGATE.",
+        "Units": "uL",
+        "Note": "This recipe accounts for a 10% buffer for pipetting error."
+      }
     }
   ],
   "execution_details": {

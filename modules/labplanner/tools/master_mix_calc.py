@@ -70,24 +70,3 @@ class MasterMixCalc:
 _instance = MasterMixCalc()
 _instance.initiate()
 calculate_master_mix = _instance.run
-
-if __name__ == "__main__":
-    # This block only runs when you execute this file directly
-    print("--- Testing Master Mix Calculator ---")
-    try:
-        # Simulate a request for 10 samples of General PCR
-        test_result = calculate_master_mix("General PCR", 10)
-        
-        print(f"\nProtocol: {test_result['Protocol']}")
-        print(f"Samples: {test_result['Samples']}")
-        print(f"Units: {test_result['Units']}")
-        print("\n[Scaled Reagents]")
-        for reagent, volume in test_result['Scaled Recipe'].items():
-            print(f"- {reagent}: {volume} uL")
-            
-        print("\n[Bench Instructions]")
-        print(test_result['Instructions'])
-        
-    except Exception as e:
-        print(f"Error during test: {e}")
-

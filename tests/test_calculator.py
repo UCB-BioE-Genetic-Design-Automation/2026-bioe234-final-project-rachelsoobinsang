@@ -41,7 +41,7 @@ def test_unknown_protocol():
     with pytest.raises(ValueError):
         calculate_master_mix("Lancelot", 5)
 
-def num_samples_not_int():
+def test_num_samples_not_int():
     with pytest.raises(ValueError):
         calculate_master_mix("PCR", "Lancelot")
 

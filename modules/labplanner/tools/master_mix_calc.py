@@ -38,7 +38,7 @@ class MasterMixCalc:
         available = ", ".join(self.recipe_book.keys())
         if lookup_name not in self.recipe_book:
             raise ValueError(f"'{lookup_name} not in the recipe book. Select from: {available}")
-        if not isinstance(num_samples, int) or num_samples <= 1:
+        if not isinstance(num_samples, int) or num_samples <= 0:
             raise ValueError(f"The number of samples must be an integer that is at least 1.")
         
         base_recipe = self.recipe_book[lookup_name]

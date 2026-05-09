@@ -25,6 +25,10 @@ def test_golden_gate_fivefold():
     result = calculate_master_mix("Golden_Gate", 5)
     assert result["Scaled Recipe"]["Gibson_Assembly_Master_Mix"] == round(7.5 * 5 * 1.1, 2)
 
+def test_huge_pcr():
+    result = calculate_master_mix("PCR", 625)
+    assert result["Scaled Recipe"]["ddH2O"] == round(32.0 * 1.1 * 625, 2)
+
 def test_name_without_underscores():
     result = calculate_master_mix("Golden Gate", 3)
     assert result["Protocol"] == "Golden_Gate"

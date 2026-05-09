@@ -17,7 +17,7 @@ class Serializer:
         '''
         with open(outpath, 'w+') as f:
             f.write(labSheet.title + '\n')
-            f.write('Reaction:\n')
+            f.write('Scaled Reaction:\n')
             if labSheet.reaction:
                 for reagent in labSheet.reaction.reaction: 
                     f.write(str(reagent[1]) + 'uL ' + reagent[0].value + '\n')

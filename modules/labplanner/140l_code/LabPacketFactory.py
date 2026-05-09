@@ -112,10 +112,10 @@ class LabPacketFactory:
                 enzyme_to_steps[tupStep] = [step]
         
         for enzymeList in enzyme_to_steps:
-            num_samples = len(enzyme_to_steps[enzymeList])
-            calc_result = calculate_master_mix("Digest", num_samples)
-            reaction = [(Reagent[r], v)
-                        for r, v in calc_result["Scaled Recipe"].items()]
+            reaction = []
+            reaction.append((Reagent.ddH2O, 33.5))
+            reaction.append((Reagent.NEB_Buffer_2_10x, 5))
+            reaction.append((Reagent.dna, 10))
             for enzyme in enzymeList:
                 reaction.append((enzyme, 1))
             recipe = Recipe(None, reaction)

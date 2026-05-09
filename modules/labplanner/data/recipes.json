@@ -8,20 +8,11 @@
         "PrimeSTAR_GXL_Buffer_5x": 10.0,
         "PrimeSTAR_GXL_DNA_Polymerase": 1.0
     },
-    "Digest": {
-        "ddH2O": 33.5,
-        "NEB_Buffer_2_10x": 5.0,
-        "dna": 10.0
-    },
     "Ligate": {
         "ddH2O": 7.5,
         "T4_DNA_Ligase_Buffer_10x": 1.0,
         "dna": 1.0,
         "T4_DNA_ligase": 0.5
-    },
-    "Golden_Gate": {
-        "ddH2O": 6.75,
-        "Gibson_Assembly_Master_Mix": 7.5
     },
     "Gibson": {
         "ddH2O": 6.0,

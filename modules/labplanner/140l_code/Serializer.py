@@ -17,7 +17,11 @@ class Serializer:
         '''
         with open(outpath, 'w+') as f:
             f.write(labSheet.title + '\n')
-            f.write('Scaled Reaction:\n')
+            scaled_types = (PCR, Ligate, Gibson)
+            if labSheet.sheetType in scaled_types:
+                f.write('Scaled Master Mix:\n')
+            else:
+                f.write('Reaction:\n')
             if labSheet.reaction:
                 for reagent in labSheet.reaction.reaction: 
                     f.write(str(reagent[1]) + 'uL ' + reagent[0].value + '\n')
